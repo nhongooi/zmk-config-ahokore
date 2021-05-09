@@ -11,25 +11,39 @@
 &lt { quick_tap_ms = <200>; };
 
 / {
-    keymap {
-      behaviors {
-        hm: homerow_mods {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
-            #binding-cells = <2>;
-            tapping-term-ms = <300>;
-            quick_tap_ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
+    behaviors {
+      hm: homerow_mods {
+        compatible = "zmk,behavior-hold-tap";
+        label = "HOMEROW_MODS";
+        #binding-cells = <2>;
+        tapping-term-ms = <300>;
+        quick_tap_ms = <0>;
+        flavor = "tap-preferred";
+        bindings = <&kp>, <&kp>;
       };
+      gresc: grave_escape {
+        compatible = "zmk,behavior-mod-morph";
+        label = "GRAVE_ESCAPE";
+        #binding-cells = <0>;
+        bindings = <&kp ESC>, <&kp GRAVE>;
+        mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
+      };
+      dbspc: del_backspace {
+        compatible = "zmk,behavior-mod-morph";
+        label = "DEL_BACKSPACE";
+        #binding-cells = <0>;
+        bindings = <&kp BSPC>, <&kp DEL>;
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+      };
+    };
+    keymap {
       compatible = "zmk,keymap";
       default_layer {
         bindings = <
     &kp Q       &kp W        &kp E        &kp R       &kp T                &kp Y      &kp U       &kp I          &kp O         &kp P
     &hm LGUI A  &hm LSHFT S  &hm LCTRL D  &hm LALT F  &kp G                &kp H      &hm RALT J  &hm RCTRL K    &hm RSHFT L   &hm RGUI SEMI
     &kp Z       &kp X        &kp C        &kp V       &kp B                &kp N      &kp M       &kp COMMA      &kp DOT       &kp FSLH
-                             &kp BSPC   &lt 3 TAB  &lt 1 SPC               &lt 2 RET         &kp BSPC       &lt 4 ESC
+                             &dbspc       &lt 3 TAB   &lt 1 SPC            &lt 2 RET  &dbspc      &lt 4 ESC
         >;
       };
       lower_layer {
