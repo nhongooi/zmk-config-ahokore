@@ -14,35 +14,45 @@
 / {
     keymap {
       compatible = "zmk,keymap";
-      default_layer { bindings = <
-    &kp Q      &kp W       &kp E      &kp R      &kp T                &kp Y &kp U       &kp I          &kp O         &kp P
-    &mt LGUI A &mt LSHFT S &mt CTRL D &mt LALT F &kp G                &kp H &mt RALT J  &mt RCTRL K    &mt RSHFT L   &mt RGUI SEMI
-    &kp Z      &kp X       &kp C      &kp V      &kp B                &kp N &kp M       &kp CMMA       &kp DOT       &kp FSLH
-                           &kp BSPC   &lt 3 TAB  &lt 1 SPC            &lt 2 RET         &kp BSPC       &lt 4 ESC
-                    >;};
-        lower_layer { bindings = <
+      default_layer {
+        bindings = <
+    &kp Q       &kp W        &kp E        &kp R       &kp T                &kp Y      &kp U       &kp I          &kp O         &kp P
+    &mt LGUI A  &mt LSHFT S  &mt LCTRL D  &mt LALT F  &kp G                &kp H      &mt RALT J  &mt RCTRL K    &mt RSHFT L   &mt RGUI SEMI
+    &kp Z       &kp X        &kp C        &kp V       &kp B                &kp N      &kp M       &kp COMMA      &kp DOT       &kp FSLH
+                             &kp BSPC   &lt 3 TAB  &lt 1 SPC               &lt 2 RET         &kp BSPC       &lt 4 ESC
+        >;
+      };
+      lower_layer {
+        bindings = <
     &kp LG(SPC)     &kp LG(LC(1))   &kp LG(LC(2))  &kp LG(LC(3)) &kp LG(LC(4))     &kp LBKT  &kp 1   &kp 2 &kp 3 &kp RBKT
     &kp LG(LS(SPC)) &kp LG(J)       &kp LG(K)      &kp LG(L)     &kp LG(SEMI)      &kp SQT   &kp 4	 &kp 5 &kp 6 &kp EQUAL
     &kp LG(LS(Q))   &kp LG(1)       &kp LG(2)      &kp LG(3)     &kp LG(4)         &kp MINUS &kp 7   &kp 8 &kp 9 &kp BSLH
                                     &trans         &trans        &trans            &trans    &kp DOT &kp 0
-                    >;};
-        raise_layer { bindings = <
+        >;
+      };
+      raise_layer {
+        bindings = <
     &trans   &kp F1		&kp F2   &kp F3 	&kp F4     &kp PG_UP   &kp HOME 	&trans   &trans 		&trans
     &trans   &kp F5		&kp F6   &kp F7 	&kp	F8     &kp LEFT    &kp DOWN 	&kp UP   &kp RIGHT 	&kp COLON
     &trans   &kp F9		&kp F10  &kp F11 	&kp F12    &kp PG_DN   &kp END 	  &kp DEL  &trans 	  &kp QMARK
                       &trans   &trans   &trans     &trans      &trans     &trans
-                    >;};
-        con_layer { bindings = <
-    &kp LC(LS(T)) &kp LC(LS(TAB)) &kp LC(W) &kp LC(TAB) &kp LC(T))   &kp LBRC  &kp AMPS  &kp ASTRK  &kp LPAR  &kp RBRC
+        >;
+      };
+      con_layer {
+          bindings = <
+    &kp LC(LS(T)) &kp LC(LS(TAB)) &kp LC(W) &kp LC(TAB) &kp LC(T)    &kp LBRC  &kp AMPS  &kp ASTRK  &kp LPAR  &kp RBRC
     &kp LC(Z)     &kp LC(X)       &kp LC(C) &kp LC(V)   &kp LC(Y)    &kp DQT   &kp DLLR  &kp PRCNT  &kp CARET &kp PLUS
-    &trans        &trans          &trans    &trans      &kp LC(1)    &kp UNDER &kp EXCL  &kp AT     &kp HASH  &kp PIPE
+    &trans        &kp LA(B)       &kp LA(D) &kp LA(F)   &kp LC(1)    &kp UNDER &kp EXCL  &kp AT     &kp HASH  &kp PIPE
                                   &trans    &trans      &trans       &trans    &trans    &kp RPAR
-                    >;};
-        adj_layer { bindings = <
+          >;
+        };
+      adj_layer {
+          bindings = <
     &bt BT_CLR &bt BT_SEL 1 &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4    &trans    &trans    &trans    &trans    &trans
     &bt BT_NXT &trans       &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans
     &bt BT_PRV &trans       &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans
                             &trans    &trans    &trans    &trans    &trans    &trans
-                    >;};
-      };
+          >;
+        };
+    };
 };
