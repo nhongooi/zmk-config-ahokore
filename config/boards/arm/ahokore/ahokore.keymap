@@ -64,10 +64,10 @@
       };
       con_layer {
           bindings = <
-    &kp LC(LS(T)) &kp LC(LS(TAB)) &kp LC(W) &kp LC(TAB) &kp LC(T)    &kp LBRC  &kp AMPS  &kp ASTRK  &kp LPAR  &kp RBRC
-    &kp LC(Z)     &kp LC(X)       &kp LC(C) &kp LC(V)   &kp LC(Y)    &kp DQT   &kp DLLR  &kp PRCNT  &kp CARET &kp PLUS
-    &trans        &kp LA(B)       &kp LA(D) &kp LA(F)   &kp LC(1)    &kp UNDER &kp EXCL  &kp AT     &kp HASH  &kp PIPE
-                                  &trans    &trans      &trans       &trans    &trans    &kp RPAR
+    &kp LC(LS(T)) &kp LC(LS(TAB)) &kp LC(W) &kp LC(TAB) &kp LC(T)     &kp LBRC  &kp AMPS  &kp ASTRK  &kp LPAR  &kp RBRC
+    &kp LC(Z)     &kp LC(X)       &kp LC(C) &kp LC(V)   &kp LC(Y)     &kp DQT   &kp DLLR  &kp PRCNT  &kp CARET &kp PLUS
+    &trans        &kp LA(B)       &kp LA(D) &kp LA(F)   &kp LC(N1)    &kp UNDER &kp EXCL  &kp AT     &kp HASH  &kp PIPE
+                                  &trans    &trans      &trans        &trans    &trans    &kp RPAR
           >;
         };
       adj_layer {
