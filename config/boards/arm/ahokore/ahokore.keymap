@@ -8,7 +8,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
-&lt { quick_tap_ms = <350>; };
+&lt { quick_tap_ms = <200>; };
 
 / {
     behaviors {
@@ -16,7 +16,7 @@
         compatible = "zmk,behavior-hold-tap";
         label = "HOMEROW_MODS";
         #binding-cells = <2>;
-        tapping-term-ms = <250>;
+        tapping-term-ms = <230>;
         quick_tap_ms = <0>;
         flavor = "tap-preferred";
         bindings = <&kp>, <&kp>;
@@ -43,15 +43,15 @@
     &kp Q       &kp W        &kp E        &kp R       &kp T                &kp Y      &kp U       &kp I          &kp O         &kp P
     &hm LGUI A  &hm LSHFT S  &hm LCTRL D  &hm LALT F  &kp G                &kp H      &hm RALT J  &hm RCTRL K    &hm RSHFT L   &hm RGUI SEMI
     &kp Z       &kp X        &kp C        &kp V       &kp B                &kp N      &kp M       &kp COMMA      &kp DOT       &kp FSLH
-                             &dbspc       &lt 3 TAB   &lt 1 SPC            &lt 2 RET  &dbspc      &lt 4 ESC
+                             &lt 1 BSPC   &lt 3 TAB   &kp SPC              &lt 2 RET  &dbspc      &lt 4 ESC
         >;
       };
       lower_layer {
         bindings = <
-    &kp LG(SPC)     &kp LG(LC(N1))  &kp LG(LC(N2)) &kp LG(LC(N3)) &kp LG(LC(N4))     &kp LBKT  &kp N7  &kp N8 &kp N9 &kp RBKT
-    &kp LG(LS(SPC)) &kp LG(J)       &kp LG(K)      &kp LG(L)      &kp LG(SEMI)       &kp SQT   &kp N4	 &kp N5 &kp N6 &kp EQUAL
-    &kp LG(LS(Q))   &kp LG(N1)      &kp LG(N2)     &kp LG(N3)     &kp LG(N4)         &kp MINUS &kp N1  &kp N2 &kp N3 &kp BSLH
-                                    &trans         &trans         &trans             &trans    &kp DOT &kp N0
+    &kp LG(SPC)     &trans      &trans      &trans     &trans             &kp LBKT  &kp N7  &kp N8 &kp N9 &kp RBKT
+    &kp LG(LS(SPC)) &kp LG(J)   &kp LG(K)   &kp LG(L)  &kp LG(SEMI)       &kp SQT   &kp N4	&kp N5 &kp N6 &kp EQUAL
+    &kp LG(LS(Q))   &kp LG(N1)  &kp LG(N2)  &kp LG(N3) &kp LG(N4)         &kp MINUS &kp N1  &kp N2 &kp N3 &kp BSLH
+                                &trans      &trans     &trans             &trans    &kp DOT &kp N0
         >;
       };
       raise_layer {
@@ -74,7 +74,7 @@
           bindings = <
     &bt BT_CLR &bt BT_SEL 1 &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4    &trans    &trans    &trans    &trans    &trans
     &bt BT_NXT &trans       &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans
-    &bt BT_PRV &trans       &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans
+    &bt BT_PRV &kp LG(LC(N1))  &kp LG(LC(N2)) &kp LG(LC(N3)) &kp LG(LC(N4))    &trans    &trans    &trans    &trans    &trans
                             &trans    &trans    &trans    &trans    &trans    &trans
           >;
         };
